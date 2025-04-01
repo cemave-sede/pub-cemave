@@ -15,7 +15,9 @@ about:
 
 **Sobre este site**
 
-Este é um repositório de publicações do CEMAVE, contemplantdo diversos tipos de documentos. Estão reunidas aqui publicações técnico-científicas produzidas desde 1979 por membros do corpo técnico do Centro ou que contam com sua participação como co-autores. Os documentos disponibilizados incluem artigos científicos completos, resumos, resumos expandidos, capítulos de livros, artigos de divulgação, notas, manuais, guias, cartilhas, livros, planos de ação nacional, mesas redondas, monografias, teses, dissertações de mestrado, painéis, palestras, relatórios técnicos, planos de trabalho, pôsteres, notas de divulgação científica e comunicações.  
+Este é um repositório de publicações do CEMAVE, contemplantdo diversos tipos de documentos. Estão reunidas aqui publicações técnico-científicas produzidas desde 1979 por membros do corpo técnico do Centro ou que contam com sua participação como co-autores.  
+
+Os documentos disponibilizados incluem artigos científicos completos, resumos, resumos expandidos, capítulos de livros, artigos de divulgação, notas, manuais, guias, cartilhas, livros, planos de ação nacional, mesas redondas, monografias, teses, dissertações de mestrado, painéis, palestras, relatórios técnicos, planos de trabalho, pôsteres, notas de divulgação científica e comunicações.  
 
 Para uma busca rápida você pode acessar a página "Publicações" e usar o atalho "CRT + F".
 
