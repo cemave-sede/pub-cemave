@@ -16,12 +16,8 @@ execute:
   error: false     # não exibe erros no HTML (opcional)
 ---
 
-
-
-
-
-
 ```{r carregamento}
+
 library(readr)
 library(dplyr)
 library(reactable)
@@ -59,14 +55,25 @@ library(stringr)
 library(readr)
 library(dplyr)
 library(stringr)
+library(readxl)
 
 dados <- read_csv2(
-  "referencias_ponto_virgula.csv",
+  #"referencias_ponto_virgula.csv",
+  "referencias_repositorio_06_02_2026_Fialho.csv",
   locale = locale(encoding = "UTF-8")
 )
 
+ # dados <- read.table("referencias.txt", header = TRUE, sep = "\t", dec = ",")
+# install.packages("readxl")  # apenas na primeira vez
+# library(readxl)
+# 
+# dados <- read_xlsx("referencias.xlsx")
 
-
+#  dados <- read_delim(
+#   "referencias.txt",
+#   delim = "\t",
+#   locale = locale(encoding = "UTF-8")
+# )
 # dados <- read_csv(
 #   file = "referencias.csv",
 #   locale = locale(encoding = "Windows-1252")
@@ -91,18 +98,20 @@ dados <- read_csv2(
 
 
 # Converter markdown [**Título**](link) → <a href="link" target="_blank"><strong>Título</strong></a>
+
 dados <- dados %>%
   mutate(
-    # Título = str_replace(Título,
-    #                      "\\[\\*\\*(.*?)\\*\\*\\]\\((.*?)\\)",
-    #                      "<a href=\"\\2\" target=\"_blank\"><strong>\\1</strong></a>")
-    # 1) Converter markdown de link + negrito
+    Título = str_replace(Título,
+                         "\\[\\*\\*(.*?)\\*\\*\\]\\((.*?)\\)",
+                         "<a href=\"\\2\" target=\"_blank\"><strong>\\1</strong></a>"),
+    
+    #1) Converter markdown de link + negrito
     Título = str_replace(
       Título,
       "\\[\\*\\*(.*?)\\*\\*\\]\\((.*?)\\)",
       "<a href=\"\\2\" target=\"_blank\"><strong>\\1</strong></a>"
     ),
-    
+
     # 2) Converter itálico simples (*texto*)
     Título = str_replace_all(
       Título,
@@ -110,7 +119,14 @@ dados <- dados %>%
       "<em>\\1</em>"
     )
   )
+
+
+
+
+
 ```
+
+\
 
 ```{r tabela}
 
