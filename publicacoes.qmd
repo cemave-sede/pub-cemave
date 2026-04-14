@@ -59,7 +59,7 @@ library(readxl)
 
 dados <- read_csv2(
   #"referencias_ponto_virgula.csv",
-  "referencias_repositorio_06_02_2026_Fialho.csv",
+  "referencias_repositorio_13_04_2026.csv",
   locale = locale(encoding = "UTF-8")
 )
 

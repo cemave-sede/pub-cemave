@@ -16,4 +16,4 @@ title: " "
     #   href: https://github.com
 ---
 
-[![](imagens/Publicacoes_CEMAVE.png){width="595"}](publicacoes.html)
+[![](imagens/Publicacoes_CEMAVE_logo_atualizada.png){width="595"}](publicacoes.html)
