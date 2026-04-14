@@ -104,7 +104,7 @@ dados <- dados %>%
     Título = str_replace(Título,
                          "\\[\\*\\*(.*?)\\*\\*\\]\\((.*?)\\)",
                          "<a href=\"\\2\" target=\"_blank\"><strong>\\1</strong></a>"),
-    
+
     #1) Converter markdown de link + negrito
     Título = str_replace(
       Título,
@@ -140,25 +140,34 @@ library(DT)
 
 dados <- dados %>% mutate(Ano = as.character(Ano))
 
+
 datatable(
   dados,
-  rownames = FALSE,        # remove coluna numérica automática
-  escape = FALSE,          # preserva HTML (links) na coluna Título
-  filter = "top",          # cria inputs no topo (iremos customizar a do Ano)
+  rownames = FALSE,
+  escape = FALSE,
+  filter = "top",
   extensions = c("Buttons"),
   options = list(
-    dom = 'Brtip',         # **remove** o 'f' (global search), mantendo Botões (B), tabela (t), info/paging (ip)
+    dom = 'Brtip',
     buttons = list(
       list(extend = "csv", text = "Download CSV"),
       list(extend = "excel", text = "Download Excel"),
       list(extend = "pdf", text = "Download PDF"),
       list(extend = "print", text = "Imprimir tabela")
     ),
-    paging = FALSE,        # tabela contínua (sem paginação)
+    paging = FALSE,
     info = TRUE,
-    autoWidth = TRUE
+    autoWidth = FALSE,  # 🔴 importante mudar para FALSE
+    columnDefs = list(
+      list(width = '80%', targets = which(names(dados) == "Título") - 1)
     )
-)
+  )
+) %>%
+  formatStyle(
+    'Título',
+    `white-space` = 'normal',
+    `word-break` = 'break-word'
+  )
 
 
 
